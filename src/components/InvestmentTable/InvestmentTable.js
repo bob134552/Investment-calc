@@ -10,7 +10,7 @@ const InvestmentTable = () => {
     return (
         <table className="result">
             <InvestmentTableHead/>
-            <tbody>
+            <tbody> 
                 <InvestmentTableBodyItem/>
             </tbody>
         </table>

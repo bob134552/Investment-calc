@@ -1,7 +1,6 @@
-import logo from "./assets/investment-calculator-logo.png";
-
 import InvestmentTable from "./components/InvestmentTable/InvestmentTable";
 import InvestmentForm from "./components/InvestmentForm/InvestmentForm";
+import Header from "./components/Header/Header";
 
 function App() {
   const calculateHandler = (userInput) => {
@@ -33,13 +32,8 @@ function App() {
 
   return (
     <div>
-      <header className="header">
-        <img src={logo} alt="logo" />
-        <h1>Investment Calculator</h1>
-      </header>
-
+      <Header />
       <InvestmentForm></InvestmentForm>
-
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
       <InvestmentTable/>
