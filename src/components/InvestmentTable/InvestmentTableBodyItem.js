@@ -6,12 +6,12 @@ import './InvestmentTableBodyItem.css'
 const InvestmentTableBodyItem = (props) => {
 
     return (
-        <tr>
-            <td>YEAR NUMBER</td>
-            <td>TOTAL SAVINGS END OF YEAR</td>
-            <td>INTEREST GAINED IN YEAR</td>
-            <td>TOTAL INTEREST GAINED</td>
-            <td>TOTAL INVESTED CAPITAL</td>
+        <tr key={props.year}>
+            <td>{props.year}</td>
+            <td>{props.savingsEnd}</td>
+            <td>{props.interest}</td>
+            <td>{props.totalInterest}</td>
+            <td>{props.totalInvested}</td>
         </tr>
     )
 };

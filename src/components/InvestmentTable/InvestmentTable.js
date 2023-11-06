@@ -4,14 +4,32 @@ import InvestmentTableBodyItem from './InvestmentTableBodyItem';
 
 import './InvestmentTable.css'
 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+});
 
-const InvestmentTable = () => {
+const InvestmentTable = (props) => {
 
     return (
         <table className="result">
             <InvestmentTableHead/>
-            <tbody> 
-                <InvestmentTableBodyItem/>
+            <tbody>
+                {props.data.map((yearData) => (
+                    <InvestmentTableBodyItem
+                        year={yearData.year}
+                        savingsEnd={formatter.format(yearData.savingsEndOfYear)}
+                        interest={formatter.format(yearData.yearlyInterest)}
+                        totalInterest={formatter.format(yearData.savingsEndOfYear -
+                            props.initialInvestment -
+                            yearData.yearlyContribution *
+                            yearData.year)}
+                        totalInvested={formatter.format(props.initialInvestment +
+                            yearData.yearlyContribution * yearData.year)}
+                    />
+                ))}
             </tbody>
         </table>
     )
