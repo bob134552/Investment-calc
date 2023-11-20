@@ -2,7 +2,7 @@ import React from 'react';
 import InvestmentTableHead from './InvestmentTableHead';
 import InvestmentTableBodyItem from './InvestmentTableBodyItem';
 
-import './InvestmentTable.css'
+import classes from './InvestmentTable.module.css'
 
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -14,7 +14,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 const InvestmentTable = (props) => {
 
     return (
-        <table className="result">
+        <table className={classes.result}>
             <InvestmentTableHead/>
             <tbody>
                 {props.data.map((yearData) => (
