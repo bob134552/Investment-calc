@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './InvestmentTableBodyItem.css'
-
 
 const InvestmentTableBodyItem = (props) => {
 

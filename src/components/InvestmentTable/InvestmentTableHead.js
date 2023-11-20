@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './InvestmentTableHead.css'
-
 
 const InvestmentTableHead = () => {
 
